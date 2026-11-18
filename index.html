@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Список задач</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Список задач</h1>
+      <p class="app__subtitle" id="summary">Нет задач</p>
+    </header>
+
+    <form class="app__form" id="todo-form" autocomplete="off">
+      <input
+        type="text"
+        id="todo-input"
+        class="app__input"
+        placeholder="Что нужно сделать?"
+        maxlength="200"
+        aria-label="Новая задача"
+      />
+      <button type="submit" class="app__add" aria-label="Добавить задачу">Добавить</button>
+    </form>
+
+    <div class="app__filters" role="tablist" aria-label="Фильтр задач">
+      <button class="filter filter--active" data-filter="all" role="tab">Все</button>
+      <button class="filter" data-filter="active" role="tab">Активные</button>
+      <button class="filter" data-filter="completed" role="tab">Выполненные</button>
+    </div>
+
+    <ul class="app__list" id="todo-list"></ul>
+
+    <p class="app__empty" id="empty-state" hidden>Здесь пока пусто. Добавьте первую задачу!</p>
+
+    <footer class="app__footer" id="footer" hidden>
+      <button class="app__clear" id="clear-completed">Очистить выполненные</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
